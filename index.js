@@ -6,17 +6,16 @@ function searchRepositories(){
   $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, data => {
       displaySearchResults(data)
     }).fail(error => {
-      displayError()
+      displayError(error)
     })
 }
 
 function displaySearchResults(data){
-  debugger;
   $('#results').html(
     `<ul>` + data.items.map(d => {'<li>hi</li>'}) `<ul>`
   )
 }
 
-function displayError(){
-
+function displayError(error){
+  debugger;
 }
