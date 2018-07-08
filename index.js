@@ -24,6 +24,7 @@ function displayError(){
 }
 
 function getCommits(){
+  debugger;
   $.get(`https://api.github.com/repos/${owner}/${repo}/commits`, data => {
       showCommits(data)
     }).fail(error => {
