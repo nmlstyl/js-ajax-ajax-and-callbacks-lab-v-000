@@ -23,7 +23,7 @@ function displayError(){
   $('#errors').html("I'm sorry, there's been an error. Please try again.")
 }
 
-function getCommits(el){
+function showCommits(el){
   $.get(`https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repo}/commits`, data => {
       showCommits(data)
     }).fail(error => {
@@ -32,5 +32,7 @@ function getCommits(el){
 }
 
 function showCommits(data){
-  debugger;
+  $('#details').html(
+    `<ul>` +  data.items.map(d => {return }).join(' ') + `<ul>`
+  )
 }
