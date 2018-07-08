@@ -25,13 +25,13 @@ function displayError(){
 
 function showCommits(el){
   $.get(`https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repo}/commits`, data => {
-      showCommits(data)
+      displayCommits(data)
     }).fail(error => {
       displayError()
     })
 }
 
-function showCommits(data){
+function displayCommits(data){
   $('#details').html(
     `<ul>` +  data.items.map(d => {return }).join(' ') + `<ul>`
   )
