@@ -12,9 +12,10 @@ function searchRepositories(){
 
 function showSearchResults(data){
   $('#results').html(
-    `<ul>` +  data.items.map(d => {return `<li>${d.name}<br>
-                                               ${d.owner.login}<br>
-                                               <a href="#" data-repo="${d.name}" data-owner="${d.owner.login}" onClick="getCommits()"></li>`}).join(' ') + `<ul>`
+    `<ul>` +  data.items.map(d => {return `<li>${d.name}<br><br>
+                                               ${d.owner.login}<br><br>
+                                               <a href="#" data-repo="${d.name}" data-owner="${d.owner.login}" onClick="getCommits()"><br><br>
+                                               </li>`}).join(' ') + `<ul>`
   )
 }
 
