@@ -29,7 +29,6 @@ function getCommits(){
     }).fail(error => {
       displayError()
     })
-
 }
 
 function showCommits(el){
