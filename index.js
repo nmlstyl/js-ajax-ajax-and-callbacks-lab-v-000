@@ -6,16 +6,16 @@ function searchRepositories(){
   $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, data => {
       displaySearchResults(data)
     }).fail(error => {
-      displayError(error)
+      displayError()
     })
 }
 
 function displaySearchResults(data){
   $('#results').html(
-    `<ul>` + data.items.map(d => {'<li>hi</li>'}) `<ul>`
+    `<ul>` +  data.items.map(d => {return `<li>${d.name}</li>`}).join(' ') + `<ul>`
   )
 }
 
-function displayError(error){
-  debugger;
+function displayError(){
+  $('#errors').html("I'm sorry, there's been an error. Please try again.")
 }
