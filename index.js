@@ -12,7 +12,8 @@ function searchRepositories(){
 
 function displaySearchResults(data){
   $('#results').html(
-    `<ul>` +  data.items.map(d => {return `<li>${d.name}</li>`}).join(' ') + `<ul>`
+    `<ul>` +  data.items.map(d => {return `<li>${d.name}<br>
+                                                ${d.owner}</li>`}).join(' ') + `<ul>`
   )
 }
 
