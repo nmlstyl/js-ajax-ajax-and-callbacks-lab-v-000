@@ -24,7 +24,7 @@ function displayError(){
 
 function getCommits(){
   $.get(`https://api.github.com/repos/${owner}/${repo}/commits`, data => {
-      showSearchResults(data)
+      showCommits(data)
     }).fail(error => {
       displayError()
     })
