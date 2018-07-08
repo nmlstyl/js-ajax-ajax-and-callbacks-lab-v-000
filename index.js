@@ -26,6 +26,8 @@ function displayError(){
 function showCommits(el){
   $.get(`https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repo}/commits/`, data => {
       displayCommits(data)
+    }).fail(error => {
+      displayError()
     })
 }
 
