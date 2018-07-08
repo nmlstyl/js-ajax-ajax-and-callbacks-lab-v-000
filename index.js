@@ -13,7 +13,8 @@ function searchRepositories(){
 function displaySearchResults(data){
   $('#results').html(
     `<ul>` +  data.items.map(d => {return `<li>${d.name}<br>
-                                                ${d.owner}</li>`}).join(' ') + `<ul>`
+                                                ${d.owner}
+                                                <a href="#" data-repo="${d.name}" onClick="getCommits()"</li>`}).join(' ') + `<ul>`
   )
 }
 
@@ -23,4 +24,4 @@ function displayError(){
 
 function showCommits(el){
 
-}
+}.
