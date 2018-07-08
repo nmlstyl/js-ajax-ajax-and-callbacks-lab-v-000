@@ -13,7 +13,7 @@ function searchRepositories(){
 function showSearchResults(data){
   $('#results').html(
     `<ul>` +  data.items.map(d => {return `<li>${d.name}<br>
-                                                ${d.owner}
+                                                ${d.owner}<br>
                                                 <a href="#" data-repo="${d.name}" data-owner="${d.owner}" onClick="getCommits()"</li>`}).join(' ') + `<ul>`
   )
 }
