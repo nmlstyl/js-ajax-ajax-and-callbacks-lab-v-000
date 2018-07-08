@@ -14,7 +14,7 @@ function showSearchResults(data){
   $('#results').html(
     `<ul>` +  data.items.map(d => {return `<li>${d.name}<br><br>
                                                ${d.owner.login}<br><br>
-                                               <a href="#" data-repo="${d.name}" data-owner="${d.owner.login}" onClick="getCommits()"><br><br>
+                                               <a href="#" data-repo="${d.name}" data-owner="${d.owner.login}" onClick="getCommits()">Show Commits</a><br><br>
                                                </li>`}).join(' ') + `<ul>`
   )
 }
