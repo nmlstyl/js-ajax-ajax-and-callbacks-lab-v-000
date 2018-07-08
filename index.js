@@ -23,7 +23,7 @@ function displayError(){
 }
 
 function getCommits(){
-  $.get(`https://api.github.com/search/${repo}/commits`, data => {
+  $.get(`https://api.github.com/repos/${owner}/${repo}/commits`, data => {
       showSearchResults(data)
     }).fail(error => {
       displayError()
