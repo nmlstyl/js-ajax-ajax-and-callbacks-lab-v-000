@@ -31,6 +31,6 @@ function getCommits(){
     })
 }
 
-function showCommits(el){
+function showCommits(data){
 
 }
