@@ -14,7 +14,7 @@ function showSearchResults(data){
   $('#results').html(
     `<ul>` +  data.items.map(d => {return `<li>${d.name}<br><br>
                                                ${d.owner.login}<br><br>
-                                               <a href="#" data-repo="${d.name}" data-owner="${d.owner.login}" onClick="showCommits(this)">Show Commits</a><br><br>
+                                               <a href="#" data-repository="${d.name}" data-owner="${d.owner.login}" onClick="showCommits(this)">Show Commits</a><br><br>
                                                </li>`}).join(' ') + `<ul>`
   )
 }
@@ -24,7 +24,7 @@ function displayError(){
 }
 
 function showCommits(el){
-  $.get(`https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repo}/commits/`, data => {
+  $.get(`https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repository}/commits/`, data => {
       displayCommits(data)
     }).fail(error => {
       displayError()
