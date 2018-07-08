@@ -32,6 +32,7 @@ function showCommits(el){
 }
 
 function displayCommits(data){
+  debugger;
   $('#details').html(
     `<ul>` +  data.items.map(d => {return `<li>
                                           ${d.commit.message}</li>`}).join(' ') + `<ul>`
