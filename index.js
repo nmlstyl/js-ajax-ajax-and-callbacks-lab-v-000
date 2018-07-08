@@ -32,5 +32,5 @@ function getCommits(){
 }
 
 function showCommits(data){
-
+  debugger;
 }
